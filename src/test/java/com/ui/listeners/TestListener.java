@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.utility.BaseTest;
+import com.utility.BaseTestLambdaTestNGParameters;
 import com.utility.BrowserUtility;
 import com.utility.ExtentReportUtility;
 import com.utility.LoggerUtility;
@@ -42,7 +43,7 @@ public class TestListener implements ITestListener {
 		 ExtentReportUtility.getTest().log(Status.FAIL, result.getMethod().getMethodName()+" FAILED");
 		 
 		Object testclass= result.getInstance();
-		BrowserUtility broweserUniltity=((BaseTest)testclass).getInstance();
+		BrowserUtility broweserUniltity=((BaseTestLambdaTestNGParameters) testclass).getInstance();
 		logger.info(result.getMethod().getMethodName() + " FAILED");
 		String screenShotPath=broweserUniltity.takeScreenshots(result.getMethod().getMethodName());
 		ExtentReportUtility.getTest().addScreenCaptureFromPath(screenShotPath);

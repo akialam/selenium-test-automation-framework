@@ -3,7 +3,7 @@
 <suite name="Automation Test suite" parallel="methods" thread-count="4"
 	verbose="1">
 	<test name="UI Automation Test">
-		<parameter name="browser" value="${chrome}"/>
+		<parameter name="browser" value="${browser}"/>
 		<parameter name="isLambdaTest" value="${isLambdaTest}"/>
 		<parameter name="isHeadLess" value="${isHeadLess}"/>
 
