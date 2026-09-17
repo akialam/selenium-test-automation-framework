@@ -27,7 +27,7 @@ public class LogInTest3 {
 	@BeforeMethod(description = "Load the homepage of the website")
 	public void setup()
 	{
-	homepage=new HomePage(CHROME);//import static com.constant.Browser.*;
+	//homepage=new HomePage(CHROME);//import static com.constant.Browser.*;
 	
 	}
 	

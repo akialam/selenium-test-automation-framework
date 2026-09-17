@@ -15,7 +15,8 @@ public class LogInTest2 {
 		
 		WebDriver driver=new ChromeDriver();
 		//HomePage homepage=new HomePage(driver);
-		HomePage homepage=new HomePage("chrome");
+		//HomePage homepage=new HomePage("chrome");
+		HomePage homepage = null;
 		LoginPage loginpage= homepage.goToLoginPage();
 		loginpage.doLoginWith("nimepej424@koboywin.com", "Password");
 		

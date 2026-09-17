@@ -154,7 +154,7 @@ public class BrowserUtility extends BaseTestLambdaTestNGParameters{
 		SimpleDateFormat datefomate=new SimpleDateFormat("HH-mm-ss");
 		String timeStamp=datefomate.format(date);
 		//String path=System.getProperty("user.dir")+"//screenshots"+name+"-"+timeStamp+".png";
-		String path = System.getProperty("user.dir") + "//screenshots//" + name +"-"+timeStamp+ ".png";
+		String path = /*System.getProperty("user.dir") +*/ "./screenshots//" + name +"-"+timeStamp+ ".png";
 		File screenShotFile=new File(path);
 		try {
 			FileUtils.copyFile(screenShotData, screenShotFile);
