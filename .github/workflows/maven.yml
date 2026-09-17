@@ -14,8 +14,8 @@ permissions:
   id-token: write
 
 jobs:
-  build:
 
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -46,18 +46,21 @@ jobs:
         name: Test Reports
         path: report.html
 
-    - name: Prepare GitHub Pages Report
+    - name: Prepare GitHub Pages
       if: always()
       run: |
         mkdir -p pages
         cp report.html pages/index.html
 
-    - name: Upload Report to GitHub Pages
+    - name: Upload GitHub Pages Artifact
       if: always()
       uses: actions/upload-pages-artifact@v5
+      with:
+        path: pages
 
     - name: Test Execution
       run: echo "Test Execution completed"
+
 
   deploy:
     needs: build
@@ -73,9 +76,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-    - name: Deploy Report to GitHub Pages
+
+    - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v5
-      with: 
-        path: pages
-      
